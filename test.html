@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/responsive_768px.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/flickity.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <!-- drawer.css start-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.1/css/drawer.min.css">
+    <!-- drawer.css end-->
+    <meta charset="utf-8">
+    <title>Re:Place Designed</title>
+  </head>
+  <body>
+    <nav class="menu">
+    	<ul id="menu" class="">
+        <li class="home_icon">Re:Place</li>
+    		<li class="home_list"><a href="#Contact" class="a_menu">Contact</a></li>
+        <li class="home_list"><a href="#Location" class="a_menu">Location</a></li>
+    		<li class="home_list"><a href="#Learn_More" class="a_menu">Pictures</a></li>
+        <li class="home_list"><a href="#price_list" class="a_menu">Reserve</a></li>
+    	</ul>
+    </nav>
+    <div class="colorfilter-base">
+      <img src="./images/photo-01.jpg" class="top_image">
+      <div id="site-titletext">yoyogi<br>Parkside place</div>
+    </div>
+    <br id="price_list">
+    <br>
+    <div class="flame">
+      <div class="discription_box">
+        <div class="hvr-underline-from-center">
+          <p>Reserve</p>
+        </div>
+        <div class="sub_discription_text">
+          <div class="sub_title_discription">
+            <p>Price List</p>
+          </div>
+          <div class="sub_discription">
+            <p>Weekday  9:00~21:00 2,000~ yen/1h</p>
+            <p>Holiday  9:00~21:00 3,500~ yen/1h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br id="Learn_More">
+    <div class="button_wrapper" >
+        <a class="button" href="./index.html">Pictures</a>
+    </div>
+    <br>
+    <div class="flickity-syncer" data-flickity='{ "imagesLoaded": true, "percentPosition": false, "autoPlay": true,"wrapAround": true}'>
+    	<img src="./images/photo-01.jpg"/>
+    	<img src="./images/photo-02.jpg"/>
+    	<img src="./images/photo-03.jpg"/>
+      <img src="./images/photo-04.jpg"/>
+      <img src="./images/photo-05.jpg"/>
+      <img src="./images/photo-06.jpg"/>
+      <img src="./images/photo-07.jpg"/>
+      <img src="./images/photo-08.jpg"/>
+      <img src="./images/photo-09.jpg"/>
+    </div>
+    <br>
+    <br id="Location">
+    <br>
+    <div class="button_wrapper" >
+        <a class="button" href="./index.html">Location</a>
+    </div>
+    <br>
+    <p id="discription">東京都渋谷区富ヶ谷1-14-21 森林ハイツ102</p>
+    <br>
+    <br>
+    <body onload="initialize();">
+      <div id="map_custmomize"></div>
+    </body>
+    <br>
+    <br id="Contact">
+    <br>
+    <div class="button_wrapper" >
+        <a class="button" href="./index.html">Contact</a>
+    </div>
+    <br>
+    <br>
+    <a id="mail" href="mailto:beautyofgrace.8@gmail.com">beautyofgrace.8@gmail.com</a>
+    <br>
+
+    <!-- jquery & iScroll start-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.3/iscroll.min.js"></script>
+    <script src="https://cdn.rawgit.com/ungki/bootstrap.dropdown/3.3.5/dropdown.min.js"></script>
+    <!-- jquery & iScroll end-->
+    <!-- drawer.js start-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.1/js/drawer.min.js"></script>
+    <!-- drawer.js end-->
+    <script src="js/flickity.pkgd.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <script>
+    $(function(){
+       // #で始まるアンカーをクリックした場合に処理
+       $('a[href^=#]').click(function() {
+          // スクロールの速度
+          var speed = 400; // ミリ秒
+          // アンカーの値取得
+          var href= $(this).attr("href");
+          // 移動先を取得
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          // 移動先を数値で取得
+          var position = target.offset().top;
+          // スムーススクロール
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+       });
+    });
+    </script>
+
+    <script type="text/javascript">
+
+    //*************************************************
+    //Exec jquery start
+    //*************************************************
+    // Google Map Start
+    function initialize() {
+    var latlng = new google.maps.LatLng(35.667106, 139.691656);/*表示したい場所の経度、緯度*/
+    var myOptions = {
+      zoom: 16, /*拡大比率*/
+      center: latlng, /*表示枠内の中心点*/
+      scrollwheel:false,
+      mapTypeControlOptions: { mapTypeIds: ['noText', google.maps.MapTypeId.ROADMAP] }/*表示タイプの指定*/
+    };
+    var map = new google.maps.Map(document.getElementById('map_custmomize'), myOptions);/*マップのID取得*/
+
+    /*スタイルのカスタマイズ*/
+    var styleOptions =
+    [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}];
+
+     var styledMapOptions = { name: '富ヶ谷森林ハイツ' }
+      var sampleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
+      map.mapTypes.set('sample', sampleType);
+      map.setMapTypeId('sample');
+
+    /*WEB企画アイコンの取得*/
+    var icon =
+      new google.maps.MarkerImage('images/icon.png',/*アイコンの場所*/
+      new google.maps.Size(53,70),/*アイコンのサイズ*/
+      new google.maps.Point(0,0),
+      new google.maps.Point(35,67)/*アイコンの位置*/
+    );
+
+    /*マーカーの設置*/
+    var markerOptions = {
+      position: latlng,/*表示場所と同じ位置に設置*/
+      map: map,
+      icon: icon,
+      title: '富ヶ谷森林ハイツ'/*マーカーのtitle*/
+    };
+    var marker = new google.maps.Marker(markerOptions);
+    }
+
+    // Google Map End
+    $(function() {
+      //ロード or スクロールされると実行
+      $(window).on('load scroll', function(){
+        //ヘッダーの高さ分(80px)スクロールするとfixedクラスを追加
+        if ($(window).scrollTop() > 58) {
+          //$('ul').addClass('fixed');
+          $('nav.menu').css('position','fixed');
+          $('nav.menu').css('background-color','#FFF');
+          $('nav.menu').css('color','#333');
+          $('.a_menu').css('color','#333');
+        } else {
+          //80px以下だとfixedクラスを削除
+          //$('ul').removeClass('fixed');
+          $('nav.menu').css('position','absolute');
+          $('nav.menu').css('background-color','Transparent');
+          $('nav.menu').css('color','#FFF');
+          $('.a_menu').css('color','#FFF');
+        }
+      });
+    });
+
+    //*************************************************
+    //Exec jquery end
+    //*************************************************
+    </script>
+  </body>
+</html>

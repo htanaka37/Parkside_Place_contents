@@ -1,0 +1,170 @@
+/* Basic Rule */
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Raleway', sans-serif, 'Poiret One', cursive;;
+	font-size: 32px;
+	background: #FFF;
+  }
+
+a { text-decoration: none;}
+a:hover { text-decoration: none;}
+a:visited {color : #FFF;}
+/* Header Compenent */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+nav.menu {
+	width: 100%;
+	color: #FFF;
+	background-color: Transparent;
+  z-index: 3;
+}
+
+ul#menu {
+  z-index: 0;
+	width: 95%;
+  height: 58px;
+	margin: 0 auto;
+	overflow: hidden;
+  font-family: 'Raleway';
+  /*position: absolute;*/
+
+}
+
+ul.fixed {
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+ul#menu li.home_icon{
+  width: 10%;
+  margin: 0 auto;
+  padding: 10px 0;
+  float: left;
+}
+
+ul#menu li.home_list {
+  width: 165px;
+  padding: 10px 0;
+  /* border-left: 1px solid #666; */
+  text-align: center;
+  list-style: none;
+  float: right;
+  font-family: 'Poiret One';
+}
+
+/* Image Component */
+
+.colorfilter-base{
+  background-color: black;
+  position: relative;
+}
+
+.top_image {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.6;
+}
+#site-titletext2 {
+  font-family: 'Roboto Slab', serif;
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  -webkit-transform: translate(-5%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+  font-size: 55px;
+  text-align: center;
+  color: #FFF;
+}
+
+#site-titletext {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  -webkit-transform: translate(-5%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+  font-size: 112px;
+  text-align: center;
+  color: #FFF;
+}
+
+#map_custmomize {
+  width: 100%;
+  height: 550px;
+}
+
+#discription {
+  font-size: 18px;
+  text-align: center;
+}
+
+#mail {
+  font-size: 22px;
+  width: 100%;
+  text-align: center;
+  float: right;
+  color: #333;
+}
+
+.flame {
+  height: 400px;
+}
+
+.discription_box {
+  position: absolute;
+  width: 80%;
+  height: 400px;
+  left: 10%;
+  max-width: 100%;
+}
+
+.hvr-underline-from-center {
+  text-align: center;
+  left: 33.3%;
+  width: 33.3%;
+}
+
+.sub_discription_text {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  float: left;
+  top: 40%;
+
+}
+
+.sub_title_discription {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  font-size: 28px;
+}
+
+.sub_discription {
+  position: relative;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
+
+.side_image {
+  max-width: 50%;
+  height: 100px;
+  float: right;
+}
+
+#position_reset {
+  position: relative;
+}

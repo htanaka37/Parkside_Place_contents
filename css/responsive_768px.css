@@ -1,0 +1,22 @@
+
+
+/* Responsive CSS */
+
+@media only screen and (max-width: 1024px) {
+  .home_list {
+    display: none;
+  }
+
+  .home_icon {
+    text-align: left;
+  }
+
+  #site-titletext {
+    font-size: 48px;
+  }
+
+  .banner  {
+    display: none;
+  }
+
+}
