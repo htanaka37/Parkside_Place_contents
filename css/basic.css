@@ -18,7 +18,7 @@ a:visited {color : #FFF;}
 
 nav.menu {
 	width: 100%;
-	color: #FFF;
+	color: #000000;
 	background-color: Transparent;
   z-index: 3;
 }
@@ -119,13 +119,13 @@ ul#menu li.home_list {
 }
 
 .flame {
-  height: 400px;
+  height: 150px;
 }
 
 .discription_box {
   position: absolute;
   width: 80%;
-  height: 400px;
+  height: 150px;
   left: 10%;
   max-width: 100%;
 }
@@ -138,11 +138,17 @@ ul#menu li.home_list {
 
 .sub_discription_text {
   position: absolute;
-  width: 50%;
+  width: 100%;
   height: auto;
   float: left;
-  top: 40%;
+  top: 35%;
+}
 
+.sub_discription_link {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  font-size: 32px;
 }
 
 .sub_title_discription {
