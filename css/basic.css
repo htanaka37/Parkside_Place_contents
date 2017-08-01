@@ -20,6 +20,7 @@ nav.menu {
 	width: 100%;
 	color: #000000;
 	background-color: Transparent;
+  position: absolute;
   z-index: 3;
 }
 
